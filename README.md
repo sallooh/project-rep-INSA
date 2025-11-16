@@ -3,10 +3,6 @@
 
 ## Introduction
 
-# Project Title
-
-## Introduction
-
 Ce dépôt présente une synthèse sur la reproductibilité et la réplicabilité de l’étude « Many Analysts ». L’analyse originale mobilisait 29 équipes chargées d’examiner le même jeu de données pour déterminer si les joueurs à la peau foncée reçoivent plus de cartons rouges que ceux à la peau claire.
 Pour la reproductibilité, nous avons reproduit le travail des équipes 7, 25 et ... sélectionnées.
 Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant une nouvelle analyse du même jeu de données.
