@@ -1,0 +1,46 @@
+# Image stable, complète, fiable
+FROM debian:bookworm
+
+# Désactiver BuildKit pour éviter TOUTES les corruptions
+ENV DOCKER_BUILDKIT=0
+
+# Installer dépendances système + outils nécessaires pour compiler les packages R
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    r-base \
+    r-base-dev \
+    build-essential \
+    gfortran \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    libbz2-dev \
+    zlib1g-dev \
+    liblzma-dev \
+    libreadline-dev \
+    libpng-dev \
+    libjpeg-dev \
+    libcairo2-dev \
+    ca-certificates \
+    wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Pré-réparer R pour éviter les erreurs lors du build
+RUN R -e "install.packages('Rcpp', repos='https://cloud.r-project.org')"
+
+# Installer DataCombine et PReMiuM PROCÉDURE CORRECTE
+RUN R -e "install.packages(c('DataCombine'), repos='https://cloud.r-project.org')"
+
+# PReMiuM dépend de rjags et JAGS -> installer JAGS
+RUN apt-get update && apt-get install -y jags && rm -rf /var/lib/apt/lists/*
+
+# Installer PReMiuM depuis CRAN
+RUN R -e "install.packages('PReMiuM', repos='https://cloud.r-project.org', dependencies=TRUE)"
+
+# Définir le dossier de travail
+WORKDIR /app
+
+# Copier script + dataset
+COPY rawTeam7code.r .
+COPY ../../data/CrowdstormingDataJuly1st.csv CrowdstormingDataset.csv
+
+CMD ["Rscript", "rawTeam7code.r"]
