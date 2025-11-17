@@ -2,13 +2,9 @@
 
 ### Variability Factors (Essential)
 
-We follow the original “Many Analysts, One Data Set” framework and focus on the **four main sources of analytic variation** that most strongly affected results in the 29-team study.
-
-These are the only factors that significantly change the estimated effect of skin tone on red-card probability.
-
 ---
 
-### 📋 Key Variability Factors
+### Key Variability Factors
 
 | Variability Factor | Possible Values | Why it Matters |
 |--------------------|-----------------|----------------|
@@ -21,7 +17,7 @@ These four factors capture the essential "degrees of freedom" highlighted by Sil
 
 ---
 
-### ⚙️ Constraints Across Factors
+### Constraints Across Factors
 
 - **Logistic regression requires a binary outcome** → `if outcome = logit → use red_dummy`.
 - **Poisson regression expects a count** → `if outcome = poisson → use redCards`.
@@ -30,7 +26,7 @@ These four factors capture the essential "degrees of freedom" highlighted by Sil
 
 ---
 
-### 🧪 How to Run Variants (Docker)
+### How to Run Variants (Docker)
 
 General syntax:
 
