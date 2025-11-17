@@ -9,14 +9,18 @@ from sklearn.impute import SimpleImputer
 def load_data(path="data.csv"):
     df = pd.read_csv(path)
 
-    # Compute skin tone (main variable)
+    # Compute skin tone
     df["skin"] = df[["rater1", "rater2"]].mean(axis=1)
 
-    # Binary skin tone (dark vs light)
+    # Binary skin tone
     df["skin_binary"] = (df["skin"] >= 0.5).astype(int)
 
-    # Binary red card (for logistic models)
+    # Binary red card
     df["red_dummy"] = (df["redCards"] > 0).astype(int)
+
+    # Convert birthday to datetime → compute age
+    df["birthday"] = pd.to_datetime(df["birthday"], errors="coerce", dayfirst=True)
+    df["age"] = 2013 - df["birthday"].dt.year  # season 2012–2013
 
     return df
 
@@ -36,10 +40,14 @@ def encode_position(df, mode):
 def handle_missing(df, strategy):
     if strategy == "dropna":
         return df.dropna()
+
     elif strategy == "mean":
+        # Impute only numerical columns
+        num_cols = df.select_dtypes(include=[np.number]).columns
         imputer = SimpleImputer(strategy="mean")
-        df[df.columns] = imputer.fit_transform(df)
+        df[num_cols] = imputer.fit_transform(df[num_cols])
         return df
+
     else:
         raise ValueError("Unknown missing data strategy.")
 
@@ -54,7 +62,7 @@ def scale(df, do_scale):
 
 
 def build_formula(args):
-    """ Build statistical formula based on variations. """
+    """Build statistical formula based on selected variations."""
 
     # Outcome
     if args.outcome == "linear":
@@ -101,11 +109,12 @@ def run_replication(args):
     print("\n=== Running model with formula ===")
     print(formula)
 
+    # Model selection
     if args.outcome == "logit":
         model = smf.logit(formula, data=df).fit()
     elif args.outcome == "poisson":
         model = smf.poisson(formula, data=df).fit()
-    else:  # linear
+    else:  # linear model
         model = smf.ols(formula, data=df).fit()
 
     print("\n=== Replication Results ===")
@@ -122,7 +131,7 @@ def run_replication(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
-    # outcome model
+    # outcome
     parser.add_argument("--outcome", default="logit", choices=["linear", "logit", "poisson"])
 
     # skin tone type

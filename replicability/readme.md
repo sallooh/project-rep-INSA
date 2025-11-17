@@ -41,8 +41,9 @@ docker run --rm rep-study \
     --cov <none|performance|full> \
     --missing <dropna|mean>
 
-Examples:
+Examples (dans la racine du projet):
 ```bash
+docker build -t rep-study -f replicability/Dockerfile .
 docker run --rm rep-study \
     --outcome logit --skin continuous --cov performance
 ```
