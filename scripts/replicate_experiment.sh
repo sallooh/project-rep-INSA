@@ -7,12 +7,20 @@ echo
 
 # Docker image name
 IMAGE="rep-study"
+DOCKERFILE="replicability/Dockerfile"
 
-# Check that the docker image exists
+# Check that the docker image exists; if not, build it
 if ! docker image inspect $IMAGE >/dev/null 2>&1; then
-    echo "[ERROR] Docker image '$IMAGE' not found."
-    echo "Run: docker build -t rep-study -f replicability/Dockerfile ."
-    exit 1
+    echo "[INFO] Docker image '$IMAGE' not found."
+    echo "[INFO] Building Docker image using $DOCKERFILE ..."
+    docker build -t $IMAGE -f $DOCKERFILE .
+    
+    if [ $? -ne 0 ]; then
+        echo "[ERROR] Docker image build failed."
+        exit 1
+    fi
+
+    echo "[INFO] Docker image '$IMAGE' successfully built."
 fi
 
 # Output directory for logs
@@ -37,7 +45,7 @@ run_variant () {
 
     LOGFILE="$OUTDIR/variant_${ID}.log"
 
-    docker run --rm rep-study \
+    docker run --rm $IMAGE \
         --outcome $OUTCOME \
         --skin $SKIN \
         --cov $COV \

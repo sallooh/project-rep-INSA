@@ -20,7 +20,7 @@ Dep. Variable:               redCards   No. Observations:               123715
 Model:                        Poisson   Df Residuals:                   123706
 Method:                           MLE   Df Model:                            8
 Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.06168
-Time:                        10:25:52   Log-Likelihood:                -7987.5
+Time:                        11:00:44   Log-Likelihood:                -7987.5
 converged:                       True   LL-Null:                       -8512.5
 Covariance Type:            nonrobust   LLR p-value:                2.383e-221
 ===============================================================================

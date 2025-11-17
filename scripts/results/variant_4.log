@@ -20,7 +20,7 @@ Dep. Variable:              red_dummy   No. Observations:               123715
 Model:                          Logit   Df Residuals:                   123713
 Method:                           MLE   Df Model:                            1
 Date:                Mon, 17 Nov 2025   Pseudo R-squ.:               0.0004696
-Time:                        10:25:55   Log-Likelihood:                -8377.2
+Time:                        11:00:47   Log-Likelihood:                -8377.2
 converged:                       True   LL-Null:                       -8381.2
 Covariance Type:            nonrobust   LLR p-value:                  0.005023
 ==============================================================================
