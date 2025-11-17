@@ -5,7 +5,7 @@ install.packages("lsr")
 library(lsr)
 
 # Import data and select relevant variables.
-data = read.csv("data/dataset/1. Crowdsourcing Dataset July 01, 2014 Incl.Ref Country/CrowdstormingDataJuly1st.csv")
+data = read.csv(".data/dataset/1._Crowdsourcing_Dataset_July_01,_2014_Incl.Ref_Country/CrowdstormingDataJuly1st.csv")
 data <- subset(data, select=c(playerShort,refNum,redCards,games,goals,position,rater1,rater2,meanIAT,meanExp,club,leagueCountry,yellowCards))
 starting_size = nrow(data)
 
