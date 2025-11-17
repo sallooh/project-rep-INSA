@@ -1,0 +1,38 @@
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+
+=== Running model with formula ===
+red_dummy ~ skin + height + weight + games + goals + victories + age + yellowCards
+Optimization terminated successfully.
+         Current function value: 0.062802
+         Iterations 9
+
+=== Replication Results ===
+Skin variable: continuous
+Outcome: logit
+Model: glm
+Covariates: full
+Missing: mean
+Position: onehot
+
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:              red_dummy   No. Observations:               146028
+Model:                          Logit   Df Residuals:                   146019
+Method:                           MLE   Df Model:                            8
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.05854
+Time:                        10:26:02   Log-Likelihood:                -9170.9
+converged:                       True   LL-Null:                       -9741.1
+Covariance Type:            nonrobust   LLR p-value:                6.973e-241
+===============================================================================
+                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------
+Intercept      -7.2089      0.787     -9.159      0.000      -8.751      -5.666
+skin            0.3236      0.086      3.777      0.000       0.156       0.492
+height          0.0087      0.006      1.526      0.127      -0.002       0.020
+weight          0.0029      0.005      0.536      0.592      -0.008       0.013
+games           0.1726      0.008     20.373      0.000       0.156       0.189
+goals          -0.0365      0.019     -1.890      0.059      -0.074       0.001
+victories      -0.1225      0.016     -7.641      0.000      -0.154      -0.091
+age             0.0131      0.006      2.263      0.024       0.002       0.024
+yellowCards     0.1176      0.022      5.407      0.000       0.075       0.160
+===============================================================================

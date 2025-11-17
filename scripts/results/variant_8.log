@@ -1,0 +1,31 @@
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+
+=== Running model with formula ===
+redCards ~ skin
+Optimization terminated successfully.
+         Current function value: 0.068775
+         Iterations 4
+
+=== Replication Results ===
+Skin variable: continuous
+Outcome: poisson
+Model: glm
+Covariates: none
+Missing: dropna
+Position: onehot
+
+                          Poisson Regression Results                          
+==============================================================================
+Dep. Variable:               redCards   No. Observations:               123715
+Model:                        Poisson   Df Residuals:                   123713
+Method:                           MLE   Df Model:                            1
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:               0.0004588
+Time:                        10:26:05   Log-Likelihood:                -8508.6
+converged:                       True   LL-Null:                       -8512.5
+Covariance Type:            nonrobust   LLR p-value:                  0.005192
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     -4.4264      0.036   -123.782      0.000      -4.496      -4.356
+skin           0.2374      0.084      2.830      0.005       0.073       0.402
+==============================================================================

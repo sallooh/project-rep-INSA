@@ -1,0 +1,35 @@
+Emulate Docker CLI using podman. Create /etc/containers/nodocker to quiet msg.
+
+=== Running model with formula ===
+red_dummy ~ skin + games + victories + defeats + goals
+Optimization terminated successfully.
+         Current function value: 0.063619
+         Iterations 9
+
+=== Replication Results ===
+Skin variable: continuous
+Outcome: logit
+Model: glm
+Covariates: performance
+Missing: dropna
+Position: onehot
+
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:              red_dummy   No. Observations:               123715
+Model:                          Logit   Df Residuals:                   123709
+Method:                           MLE   Df Model:                            5
+Date:                Mon, 17 Nov 2025   Pseudo R-squ.:                 0.06091
+Time:                        10:25:47   Log-Likelihood:                -7870.7
+converged:                       True   LL-Null:                       -8381.2
+Covariance Type:            nonrobust   LLR p-value:                1.705e-218
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept     -5.0299      0.044   -114.941      0.000      -5.116      -4.944
+skin           0.3059      0.086      3.549      0.000       0.137       0.475
+games          0.1414      0.018      7.670      0.000       0.105       0.178
+victories     -0.0673      0.024     -2.752      0.006      -0.115      -0.019
+defeats        0.0760      0.027      2.819      0.005       0.023       0.129
+goals         -0.0406      0.020     -2.066      0.039      -0.079      -0.002
+==============================================================================
