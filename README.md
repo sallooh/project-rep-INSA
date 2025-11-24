@@ -52,17 +52,6 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
 | **Covariate Set** | `none`, `performance`, `full` | The biggest source of variability. Including or excluding performance/discipline controls drastically changes the estimated effect. |
 | **Missing Data Strategy** | `dropna`, `mean` | Different teams handle missing player attributes differently, changing sample size and estimates. |
 
-These four factors capture the essential "degrees of freedom" highlighted by Silberzahn et al. (2018).
-
----
-
-### Constraints Across Factors
-
-- **Logistic regression requires a binary outcome** → `if outcome = logit → use red_dummy`.
-- **Poisson regression expects a count** → `if outcome = poisson → use redCards`.
-- **Binary skin tone requires a threshold** (we use ≥ 0.5).
-- **Covariates must exist in the dataset** → if `cov = none`, model becomes unadjusted.
-
 ---
 
 
