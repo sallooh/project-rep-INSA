@@ -1,4 +1,4 @@
-full_data <- read.table("CrowdstormingDataset.csv", sep=",", header=TRUE)
+full_data <- read.table("CrowdstormingDataJuly1st.csv", sep=",", header=TRUE)
 
 library(DataCombine)
 full_data <- DropNA(full_data, c("rater1", "rater2"), message=FALSE)
