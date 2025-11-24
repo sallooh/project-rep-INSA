@@ -10,12 +10,12 @@ Etant donné que cette version est obsolète, nous avons dû installer un vieux 
 ## Résultats : 
 
 La reproduction pour l'équipe 27 a été réalisée avec succès. Les résultats obtenus ont été comparés aux résultats originaux de l'équipe 27, montrant une correspondance étroite dans les statistiques clés.
-Cependant, quelques divergences mineures ont été notées, principalement dues à des différences potentielles dans les versions des bibliothèques utilisées. 
+Cependant, quelques divergences mineures ont été notées, principalement dues à des différences potentielles dans les versions des bibliothèques utilisées. LEs versions exactes des bibliothèques utilisées par l'équipe 27 n'étant pas spécifiées, nous avons fait de notre mieux pour utiliser des versions compatibles avec Python 2.7, qui sont spécifier dans le fichier `requirements.txt`
 
 
 ## Instructions pour la reproduction
 
     ```bash
-     docker build -t replication-project .
-     docker run -it replication-project
+     docker build -t reproductibility-project .
+     docker run -it reproductibility-project
      ```

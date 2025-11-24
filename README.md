@@ -11,26 +11,22 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
 
 ### How to Reproduce the Results
 1. **Requirements**  
-   - List dependencies and their versions (e.g., Python, R, libraries, etc.).
-   - Specify any system requirements.
+   Nous avons utilisés principalement Python 2.7 et R pour reproduire les analyses. Les dépendances spécifiques sont listées dans le fichier `requirements.txt` (pour l'équipe 27).
+   
+   Etant donné que la version 2.7 de Python est obsolète, nous avons utilisé un debian Buster pour garantir la compatibilité. Le Dockerfile inclus dans le répertoire de l'équipe 27 permet de recréer l'environnement exact utilisé.
 
 2. **Setting Up the Environment**  
-   - Provide instructions for using the Dockerfile to create a reproducible environment:  
+   Pour chaque équipe, un Dockerfile est fourni pour configurer l'environnement nécessaire. Pour construire et exécuter le conteneur Docker, utilisez les commandes suivantes dans chauque répertoire d'équipe `teams/teamXX` :
      ```bash
      docker build -t reproducible-project .
      docker run -it reproducible-project
      ```
 
 3. **Reproducing Results**  
-   - Describe how to run the automated scripts or notebooks to reproduce data and analyze results:
+   Vous pouvez simplement exécuter ce script pour lancer la reproduction de l'analyse de la team27 (nous n'avons pas réussi à reproduire les analyses des équipes 7 et 25 à cause dee l'incompatibilité des versions de bibliothèques et de R) :
      ```bash
-     bash scripts/run_analysis.sh
+     bash scripts/reproducibility_team27.sh
      ```
-   - Mention Jupyter notebooks (if applicable):  
-     Open `notebooks/reproduce_results.ipynb` to execute the analysis step-by-step.
-
-4. **Automation (Bonus)**  
-   - Explain the included GitHub Action that produces or analyzes data automatically.  
     
 ### Encountered Issues and Improvements
 - Report any challenges, errors, or deviations from the original study.
