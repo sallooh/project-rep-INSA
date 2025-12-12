@@ -67,12 +67,6 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
 | 7  | logit          | continuous    | full        | mean     | 0.3236      | 0.000   | Strongest effect; full controls + imputation |
 | 8  | poisson        | continuous    | none        | dropna   | 0.2374      | 0.005   | Positive, significant effect without covariates |
 
-
-### Does It Confirm the Original Study?
-- Summarize the extent to which the replication supports the original study’s conclusions.
-- Highlight similarities and differences, if any.
-
 ## Conclusion
-- Recap findings from the reproducibility and replicability sections.
-- Discuss limitations of your
+- L’étude originale est partiellement reproductible, avec succès pour l’équipe 27 mais limitations dues aux versions logicielles pour d’autres équipes. La réplication menée par notre 30ᵉ équipe confirme les résultats principaux : les joueurs à la peau foncée reçoivent plus de cartons rouges. L’étude est donc réplicable, et ses conclusions restent robustes malgré la variation des méthodes analytiques.
 
