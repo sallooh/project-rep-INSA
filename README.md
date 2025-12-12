@@ -47,14 +47,14 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
 ---
 
 
-### Replication Execution
+### Exécution de la réplication
 1. **Instructions**  
      ```bash
      bash scripts/replicate_experiment.sh
      ```
 
-2. **Presentation and Analysis of Results**  
-### Replication Results Table
+2. **Présentation et analyse des résultats**  
+### Tableau des résultats de la réplication
 
 | ID | Outcome Model | Skin Variable | Covariates | Missing | Coef(skin) | p-value | Interpretation |
 |----|----------------|---------------|-------------|----------|-------------|---------|----------------|
