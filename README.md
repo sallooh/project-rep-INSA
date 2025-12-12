@@ -7,7 +7,7 @@ Ce dépôt présente une synthèse sur la reproductibilité et la réplicabilit�
 Pour la reproductibilité, nous avons reproduit le travail des équipes comme 7, 25.
 Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant une nouvelle analyse du même jeu de données.
 
-## Reproducibility
+## Reproductibilité
 
 ### How to Reproduce the Results
 1. **Requirements**  
@@ -15,14 +15,14 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
    
    Etant donné que la version 2.7 de Python est obsolète, nous avons utilisé un debian Buster pour garantir la compatibilité. Le Dockerfile inclus dans le répertoire de l'équipe 27 permet de recréer l'environnement exact utilisé.
 
-2. **Setting Up the Environment**  
+2. **Configuration de l’environnement**  
    Pour chaque équipe, un Dockerfile est fourni pour configurer l'environnement nécessaire. Pour construire et exécuter le conteneur Docker, utilisez les commandes suivantes dans chauque répertoire d'équipe `teams/teamXX` :
      ```bash
      docker build -t reproducible-project .
      docker run -it reproducible-project
      ```
 
-3. **Reproducing Results**  
+3. **Reproduction des résultats**  
    Vous pouvez simplement exécuter ce script pour lancer la reproduction de l'analyse de la team27 (nous n'avons pas réussi à reproduire les analyses des équipes 7 et 25 à cause dee l'incompatibilité des versions de bibliothèques et de R) :
      ```bash
      bash scripts/reproducibility_team27.sh
@@ -32,7 +32,7 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
 - Summarize the success or failure of reproducing the study.
 - Include supporting evidence, such as comparison tables, plots, or metrics.
 
-## Replicability
+## Réplicabilité
 
 ### Variability Factors
 ### Key Variability Factors
