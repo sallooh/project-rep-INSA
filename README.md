@@ -4,7 +4,7 @@
 ## Introduction
 
 Ce dépôt présente une synthèse sur la reproductibilité et la réplicabilité de l’étude « Many Analysts ». L’analyse originale mobilisait 29 équipes chargées d’examiner le même jeu de données pour déterminer si les joueurs à la peau foncée reçoivent plus de cartons rouges que ceux à la peau claire.
-Pour la reproductibilité, nous avons reproduit le travail des équipes 7, 25 et ... sélectionnées.
+Pour la reproductibilité, nous avons reproduit le travail des équipes comme 7, 25.
 Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant une nouvelle analyse du même jeu de données.
 
 ## Reproducibility
@@ -27,10 +27,6 @@ Pour la réplicabilité, nous intervenons comme une 30ᵉ équipe en proposant u
      ```bash
      bash scripts/reproducibility_team27.sh
      ```
-    
-### Encountered Issues and Improvements
-- Report any challenges, errors, or deviations from the original study.
-- Describe how these issues were resolved or improved, if applicable.
 
 ### Is the Original Study Reproducible?
 - Summarize the success or failure of reproducing the study.
